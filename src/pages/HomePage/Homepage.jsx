@@ -219,12 +219,16 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-          <p className="text-center font-semibold text-3xl text-inter mt-8">
-            Our Services
-          </p>
+        <p className="text-center font-semibold text-3xl text-inter mt-8">
+          Our Services
+        </p>
         <div className="grid grid-cols-3 mt-8 mb-8">
           <div className="justify-center items-center ">
-            <img src="src/assets/homepage/icons/socialmedia.png" alt="" className=" w-[4rem] h-[4rem] " />
+            <img
+              src="src/assets/homepage/icons/socialmedia.png"
+              alt=""
+              className=" w-[4rem] h-[4rem] "
+            />
             <p className="font-semibold text-lg">Social Media Management</p>
             <p className="mt-9">
               Manage your social media platfroms, create engaging posts,
@@ -232,7 +236,11 @@ const HomePage = () => {
             </p>
           </div>
           <div>
-            <img src="src/assets/homepage/icons/content.png" alt="" className=" w-[4rem] h-[4rem] " />
+            <img
+              src="src/assets/homepage/icons/content.png"
+              alt=""
+              className=" w-[4rem] h-[4rem] "
+            />
             <p className="font-semibold text-lg">Content Creation</p>
             <p className="mt-9">
               Create engaging content for social media including reels, design
@@ -240,8 +248,14 @@ const HomePage = () => {
             </p>
           </div>
           <div>
-            <img src="src/assets/homepage/icons/influencer.png" alt="" className=" w-[4rem] h-[4rem] " />
-            <p className="font-semibold text-lg">Influencer & Community Marketing</p>
+            <img
+              src="src/assets/homepage/icons/influencer.png"
+              alt=""
+              className=" w-[4rem] h-[4rem] "
+            />
+            <p className="font-semibold text-lg">
+              Influencer & Community Marketing
+            </p>
             <p className="mt-9">
               partner with influencers and engage with communities to promote
               your brand and create authentic connections.
@@ -249,11 +263,19 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="text-white bg-[#3d348b] flex flex-col items-center justify-center text-inter w-full h-[17rem]">
-        <p className="text-3xl font-bold">Ready TO Transform Your Marketing Strategy?</p>
-        <p className="mt-2">Let's Collaborate to create innovative marketing Solutions that drive real results for your business.</p>
+    
+
+      {/*Marketing strategy division  */}
+      <div className="text-white bg-[#3d348b] flex flex-col items-center justify-center text-inter w-full h-[17rem] rounded-[22px]">
+        <p className="text-3xl font-bold">
+          Ready TO Transform Your Marketing Strategy?
+        </p>
+        <p className="mt-2">
+          Let's Collaborate to create innovative marketing Solutions that drive
+          real results for your business.
+        </p>
         <button className="flex items-center gap-2 bg-[#ff6600] px-4 py-3 mt-6 rounded-md">
-          GET STARTED <MoveRight/>  
+          GET STARTED <MoveRight />
         </button>
       </div>
     </div>
