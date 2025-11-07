@@ -111,70 +111,138 @@ const Footer = () => {
           </ul>
         </div>
         <div className="overflow-x-hidden">
-          <h3 className="text-lg font-bold mb-4 text-center">Contact</h3>
+          <h3 className="text-sm text-gray-700 font-inter mb-4 text-left">
+            We are located at
+          </h3>
+          
+          {/* Main Location Headers */}
+          <div className="grid grid-cols-3 gap-4 mb-3">
+            <h4 className="font-bold text-base">UK</h4>
+            <h4 className="font-bold text-base text-center col-span-2">Nepal</h4>
+          </div>
 
-          <ul className="grid grid-cols-3 gap-2 text-xs">
-            <li className="flex flex-col gap-2">
+          {/* Location Details Grid */}
+          <div className="grid grid-cols-3 gap-4 text-xs">
+            {/* UK Location */}
+            <div className="flex flex-col gap-2">
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/ping-icon.png" alt="Location" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/ping-icon.png"
+                    alt="Location"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">Sanepa, Lalitpur, Nepal</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  London, United Kingdom
+                </p>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/call-icon.png" alt="Phone" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/call-icon.png"
+                    alt="Phone"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">+977 9805 533 602</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  +44 XXX XXX XXXX
+                </p>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/mail-icon.png" alt="mail" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/mail-icon.png"
+                    alt="mail"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">uddheshyastudio@gmail.com</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  uk@uddheshya.com
+                </p>
               </div>
-            </li>
-            <li className="flex flex-col gap-2">
+            </div>
+
+            {/* Nepal Location 1 - Sanepa */}
+            <div className="flex flex-col gap-2 ml-[4rem]">
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/ping-icon.png" alt="Location" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/ping-icon.png"
+                    alt="Location"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">Sanepa, Lalitpur, Nepal</p>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/call-icon.png" alt="Phone" className="w-4 h-4" />
-                </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">+977 9805 533 602</p>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/mail-icon.png" alt="mail" className="w-4 h-4" />
-                </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">uddheshyastudio@gmail.com</p>
-              </div>
-            </li>
-            <li className="flex flex-col gap-2">
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/ping-icon.png" alt="Location" className="w-4 h-4" />
-                </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">Sanepa, Lalitpur, Nepal</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  Sanepa, Lalitpur
+                </p>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/call-icon.png" alt="Phone" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/call-icon.png"
+                    alt="Phone"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">+977 9805 533 602</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  +977 9805 533 602
+                </p>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                  <img src="src/assets/homepage/icons/mail-icon.png" alt="mail" className="w-4 h-4" />
+                  <img
+                    src="src/assets/homepage/icons/mail-icon.png"
+                    alt="mail"
+                    className="w-4 h-4"
+                  />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">uddheshyastudio@gmail.com</p>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  uddheshyastudio@gmail.com
+                </p>
               </div>
-            </li>
-          </ul>
+            </div>
+
+            {/* Nepal Location 2 - Banepa */}
+            <div className="flex flex-col gap-2 ml-2">
+              <div className="flex items-center gap-1">
+                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                  <img
+                    src="src/assets/homepage/icons/ping-icon.png"
+                    alt="Location"
+                    className="w-4 h-4"
+                  />
+                </div>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  Banepa, Kavre
+                </p>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                  <img
+                    src="src/assets/homepage/icons/call-icon.png"
+                    alt="Phone"
+                    className="w-4 h-4"
+                  />
+                </div>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  +977 9XXX XXX XXX
+                </p>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                  <img
+                    src="src/assets/homepage/icons/mail-icon.png"
+                    alt="mail"
+                    className="w-4 h-4"
+                  />
+                </div>
+                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+                  banepa@uddheshya.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute h-[2px] bottom-[66px] bg-black left-12 right-12"></div>
