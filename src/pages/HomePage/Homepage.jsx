@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "motion/react";
+import { Typewriter } from "react-simple-typewriter";
 import {
   UtensilsCrossed,
   Lightbulb,
@@ -8,8 +10,20 @@ import {
   HeartHandshake,
   Factory,
   MoveRight,
+  BookUp,
 } from "lucide-react";
 
+const flyIN = {
+  hiddenleft: { opacity: 0, x: -100 },
+  hiddenright: { opacity: 0, x: 100 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", repeat: 0, stiffness: 120, damping: 20 },
+  },
+};
+
+const ListItems = ["We Build", "We Create", "We Host", "We Code"];
 const HomePage = () => {
   return (
     <div className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-28">
@@ -19,32 +33,73 @@ const HomePage = () => {
       >
         <div className="flex flex-col justify-center items-center h-full py-6 md:py-0">
           <p className="text-xl md:text-5xl font-bold relative z-10 text-white text-center px-2 leading-tight">
-            Building Purpose. Creating Change.
+            <Typewriter
+              words={["Building Purpose. Creating Change"]}
+              loop={Infinity}
+              cursor
+              cursorStyle=""
+              typeSpeed={40}
+              deleteSpeed={40}
+              delaySpeed={1000}
+            />
+            .
           </p>
-          <p className="text-xs md:text-[1.125rem] relative z-10 text-white mt-2 md:mt-4 text-center px-2">
+          <motion.p
+            className="text-xs md:text-[1.125rem] relative z-10 text-white mt-2 md:mt-4 text-center px-2"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Turning Ideas Into Meaningful Action <br /> Across Communities and
             Industries
-          </p>
+          </motion.p>
+
           <ul
             className="text-sm md:text-2xl relative z-10 mt-2 md:mt-4 text-white/60 text-center list-none"
             style={{ fontFamily: "tienne" }}
           >
-            <li>We Build,</li>
-            <li>We Discover,</li>
-            <li>We host,</li>
-            <li>We code</li>
+            {ListItems.map((item, index) => (
+              <motion.li
+                key={index}
+                className="text-lg font-semibold"
+                initial={{ x: index % 2 === 0 ? 100 : -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 20,
+                  damping: 20,
+                  delay: index * 0.3,
+                }}
+              >
+                {item}
+              </motion.li>
+            ))}
           </ul>
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0">
         <div className="w-full md:w-[48%] h-auto">
-          <p
+          <motion.p
+            exit={BookUp}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+              delay: 0.5,
+              repeat: 0,
+            }}
             className="text-2xl md:text-3xl text-[#121440] font-bold mt-8 mb-3 text-center md:text-left"
             style={{ fontFamily: "poppins" }}
           >
             Welcome To <br /> Uddheshya Group
-          </p>
-          <p
+          </motion.p>
+          <motion.p
+            exit={BookUp}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
             className="text-base md:text-[1.125rem] text-[#121440] text-center md:text-left"
             style={{ fontFamily: "inter" }}
           >
@@ -52,46 +107,108 @@ const HomePage = () => {
             helping businesses in Kathmandu, Banepa, and across the country grow
             via SEO, social media marketing, branding, web development, and
             comprehensive digital strategies.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col md:flex-row gap-3 mt-6 md:mt-[2rem] items-center md:items-start md:ml-[4.5rem]">
-            <button
-              className="rounded-[11px] bg-indigo-500 px-7 py-2 transition duration-300 ease-in-out hover:scale-[1.05] w-full md:w-auto"
+          <div className="flex flex-col md:flex-row gap-3 mt-6 md:mt-[2rem] items-center md:items-start md:ml-[4.5rem] justify-center">
+            <motion.button
+              variants={flyIN}
+              initial="hiddenleft"
+              whileInView="visible"
+              className="rounded-[11px] bg-indigo-500 px-7 py-2 transition duration-300 ease-in-out hover:scale-[1.05] w-[9rem] md:w-[auto]"
               style={{ boxShadow: "0px 8px 10px rgba(0,0,0, 0.35)" }}
             >
               Contact Us
-            </button>
-            <button
-              className="rounded-[11px] bg-white px-7 py-2 transition duration-300 ease-in-out hover:scale-[1.05] w-full md:w-auto"
+            </motion.button>
+            <motion.button
+              variants={flyIN}
+              initial="hiddenright"
+              whileInView="visible"
+              className="rounded-[11px] bg-white px-7 py-2 transition duration-300 ease-in-out hover:scale-[1.05] w-[9rem] md:w-auto"
               style={{ boxShadow: "0px 8px 10px rgba(0,0,0, 0.35)" }}
             >
               Learn More
-            </button>
+            </motion.button>
           </div>
         </div>
-        <div className="hidden md:flex relative w-fit">
-          <img
+        <motion.div
+          className="hidden md:flex relative w-fit"
+          animate={{ x: [0, 12, -150, 0] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "mirror",
+              duration: 8,
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <motion.img
             src="src/assets/homepage/feathershape2.jpg"
             alt="feather2"
             className="w-60 h-60 mt-8 object-cover rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none mr-[-6.045rem]"
+            animate={{ y: [0, -15, 0, 15, 0], rotate: [0, 2, 0, -2, 0] }}
+            transition={{
+              y: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+              },
+              rotate: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+              },
+            }}
           />
-          <img
+          <motion.img
             src="src/assets/homepage/feathershape1.jpg"
             alt="feather1"
             className="w-60 h-60 z-10 object-cover rounded-tl-[80px] rounded-br-[80px] mt-[7.626rem] mr-[1rem]"
+            animate={{ y: [0, 15, 0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
+            transition={{
+              y: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+                delay: 2,
+              },
+              rotate: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+                delay: 2,
+              },
+            }}
           />
-        </div>
+        </motion.div>
       </div>
-      <p className="w-full h-auto text-2xl md:text-[2.5rem] font-semibold text-center font-poppins mt-8">
-        {" "}
+      <motion.p
+        variants={flyIN}
+        initial="hiddenleft"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.9 }}
+        className="w-full h-auto text-2xl md:text-[2.5rem] text-black font-semibold text-center font-poppins mt-14"
+      >
         Trusted By Businesses Across Nepal
-      </p>
+      </motion.p>
       <div className="justify-around font-poppins font-semibold grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-7 text-white text-center">
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <UtensilsCrossed className="w-8 h-8" />
           <span className="text-sm">Restaurant Chains</span>
-        </div>
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <div className="relative inline-block">
             <Lightbulb size={39} className="text-white" />
             <Sparkles
@@ -100,24 +217,41 @@ const HomePage = () => {
             />
           </div>
           <span className="text-sm">Tech Startups</span>
-        </div>
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <ShoppingCart className="w-8 h-8" />
           <span className="text-sm">E-Commerce Stores</span>
-        </div>
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <GraduationCap className="w-8 h-8" />
           <span className="text-sm">Educational Institutes</span>
-        </div>
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <HeartHandshake size={39} className="w-8 h-8" />
           <span className="text-sm">Healthcare Providers</span>
-        </div>
-        <div className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[#3d348b] w-full md:w-[11.5rem] h-[7.5rem] rounded-[14px] flex flex-col items-center justify-center gap-2"
+        >
           <Factory className="w-8 h-8" />
           <span className="text-sm">Manufacturing Companies</span>
-        </div>
+        </motion.div>
       </div>
+
       <p className="text-2xl md:text-3xl text-center mt-[4rem] md:mt-[7.5rem] font-semibold font-inter mb-[2rem] md:mb-[4.5rem]">
         FEATURED SUCCESS STORIES
       </p>
@@ -231,7 +365,9 @@ const HomePage = () => {
               alt=""
               className="w-[4rem] h-[4rem] mx-auto md:mx-0"
             />
-            <p className="font-semibold text-lg mt-4">Social Media Management</p>
+            <p className="font-semibold text-lg mt-4">
+              Social Media Management
+            </p>
             <p className="mt-4 md:mt-9">
               Manage your social media platfroms, create engaging posts,
               Increase your brands presence online.
@@ -265,8 +401,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    
-
       {/*Marketing strategy division  */}
       <div className="text-white bg-[#3d348b] flex flex-col items-center justify-center text-inter w-full h-auto md:h-[17rem] rounded-[22px] py-8 px-4">
         <p className="text-2xl md:text-3xl font-bold text-center">
