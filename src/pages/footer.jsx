@@ -1,13 +1,19 @@
+import { Link } from "react-router-dom";
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="w-full h-auto md:h-[290px] bg-[#f2ede2] text-black relative overflow-hidden">
       <div className="h-auto w-auto px-4 md:px-12 pt-4 pb-20 grid grid-cols-1 md:grid-cols-[1fr_auto_2fr] gap-8">
         <div>
+          <Link to="/" onClick={scrollToTop}>
           <img
             src="/logo.png"
             alt="Company Logo"
             className="h-16 md:h-20 w-auto object-contain"
-          />
+          /></Link>
           <p className="text-sm mt-6 md:mt-12 font-bold">
             We Build, Discover, Design, Host And Code
           </p>
@@ -28,26 +34,13 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/company/uddheshya-group"
+                href="https://www.instagram.com/uddheshya.group/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
-                  src="src/assets/homepage/icons/linkedin-icon.png"
-                  alt="linkedin"
-                  className="w-8 h-8 my-3"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@UddheshyaGroup"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="src/assets/homepage/icons/youtube-icon.png"
-                  alt="Youtube"
+                  src="src/assets/homepage/icons/instagram-icon.png"
+                  alt="Instagram"
                   className="w-8 h-8 my-3"
                 />
               </a>
@@ -67,13 +60,26 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.instagram.com/uddheshya.group/"
+                href="https://www.youtube.com/@UddheshyaGroup"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
-                  src="src/assets/homepage/icons/instagram-icon.png"
-                  alt="Instagram"
+                  src="src/assets/homepage/icons/youtube-icon.png"
+                  alt="Youtube"
+                  className="w-8 h-8 my-3"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/uddheshya-group"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="src/assets/homepage/icons/linkedin-icon.png"
+                  alt="linkedin"
                   className="w-8 h-8 my-3"
                 />
               </a>
@@ -118,7 +124,7 @@ const Footer = () => {
           {/* Main Location Headers */}
           <div className="grid grid-cols-3 gap-2 md:gap-4 mb-3">
             <h4 className="font-bold text-sm md:text-base">UK</h4>
-            <h4 className="font-bold text-sm md:text-base col-span-2 text-center md:text-left">Nepal</h4>
+            <h4 className="font-bold text-sm md:text-base col-span-2 text-center md:text-center">Nepal</h4>
           </div>
 
           {/* Location Details Grid */}
@@ -248,7 +254,7 @@ const Footer = () => {
       <div className="h-[2px] bottom-16 md:bottom-[66px] bg-black left-4 md:left-12 right-4 md:right-12 absolute"></div>
       <div className="absolute bottom-0 text-center w-full justify-center bg-[#f2ede2] h-[50px] flex items-center px-4">
         <p className="text-sm md:text-lg w-full">
-          © 2025 Uddheshya Group. All rights reserved.
+          © 2025 <Link to="/" onClick={scrollToTop} className="hover:underline">Uddheshya Group</Link>. All rights reserved.
         </p>
       </div>
     </footer>
