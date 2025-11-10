@@ -1,32 +1,38 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
 
 const Navbar = () => {
+  const location = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isHoveringTop, setIsHoveringTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Show navbar if:
       // 1. Hovering at top
       // 2. Scrolling up
       // 3. At the top of the page
-      if (isHoveringTop || currentScrollY < lastScrollY || currentScrollY < 10) {
+      if (
+        isHoveringTop ||
+        currentScrollY < lastScrollY ||
+        currentScrollY < 10
+      ) {
         setShowNavbar(true);
       } else {
         // Hide only when scrolling down and not hovering
         setShowNavbar(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -58,7 +64,7 @@ const Navbar = () => {
         onMouseEnter={() => setIsHoveringTop(true)}
         className="fixed top-0 left-0 w-full h-16 z-40 pointer-events-auto"
       />
-      
+
       <div
         onMouseLeave={() => setIsHoveringTop(false)}
         className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
@@ -82,43 +88,77 @@ const Navbar = () => {
               <Link
                 to="/"
                 onClick={scrollToTop}
-                className="relative inline-block text-black text-base font-medium no-underline hover:text-red-500 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative inline-block text-black text-base font-medium no-underline transition-colors duration-300 
+        after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-red-500 after:transition-all after:duration-300
+        ${
+          location.pathname === "/"
+            ? "after:w-full text-red-500"
+            : "after:w-0 hover:after:w-full hover:text-red-500"
+        }`}
               >
                 Home
               </Link>
             </li>
+
             <li>
               <Link
                 to="/portfolio"
                 onClick={scrollToTop}
-                className="relative inline-block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative inline-block text-black text-base font-medium no-underline transition-colors duration-300 
+        after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
+        ${
+          location.pathname === "/portfolio"
+            ? "after:w-full text-blue-500"
+            : "after:w-0 hover:after:w-full hover:text-blue-500"
+        }`}
               >
                 Portfolio
               </Link>
             </li>
+
             <li>
               <Link
                 to="/services"
                 onClick={scrollToTop}
-                className="relative inline-block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative inline-block text-black text-base font-medium no-underline transition-colors duration-300 
+        after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
+        ${
+          location.pathname === "/services"
+            ? "after:w-full text-blue-500"
+            : "after:w-0 hover:after:w-full hover:text-blue-500"
+        }`}
               >
                 Services
               </Link>
             </li>
+
             <li>
               <Link
                 to="/career"
                 onClick={scrollToTop}
-                className="relative inline-block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative inline-block text-black text-base font-medium no-underline transition-colors duration-300 
+        after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
+        ${
+          location.pathname === "/career"
+            ? "after:w-full text-blue-500"
+            : "after:w-0 hover:after:w-full hover:text-blue-500"
+        }`}
               >
                 Career
               </Link>
             </li>
+
             <li>
               <Link
                 to="/about"
                 onClick={scrollToTop}
-                className="relative inline-block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative inline-block text-black text-base font-medium no-underline transition-colors duration-300 
+        after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
+        ${
+          location.pathname === "/about"
+            ? "after:w-full text-blue-500"
+            : "after:w-0 hover:after:w-full hover:text-blue-500"
+        }`}
               >
                 About Us
               </Link>
@@ -142,7 +182,10 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  onClick={() => { closeMobileMenu(); scrollToTop(); }}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToTop();
+                  }}
                   className="block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 py-2"
                 >
                   Home
@@ -151,7 +194,10 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/portfolio"
-                  onClick={() => { closeMobileMenu(); scrollToTop(); }}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToTop();
+                  }}
                   className="block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 py-2"
                 >
                   Portfolio
@@ -160,7 +206,10 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/services"
-                  onClick={() => { closeMobileMenu(); scrollToTop(); }}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToTop();
+                  }}
                   className="block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 py-2"
                 >
                   Services
@@ -169,7 +218,10 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/career"
-                  onClick={() => { closeMobileMenu(); scrollToTop(); }}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToTop();
+                  }}
                   className="block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 py-2"
                 >
                   Career
@@ -178,7 +230,10 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/about"
-                  onClick={() => { closeMobileMenu(); scrollToTop(); }}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToTop();
+                  }}
                   className="block text-black text-base font-medium no-underline hover:text-blue-500 transition-colors duration-300 py-2"
                 >
                   About Us
