@@ -7,6 +7,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
