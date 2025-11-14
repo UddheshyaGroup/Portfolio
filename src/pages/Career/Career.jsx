@@ -68,17 +68,7 @@ const careerpage = ({ onContactClick }) => {
             Discover Exciting Opportunities To Grow Your Career And Make An
             Impact
           </motion.p>
-          {/* <motion.button
-            variants={flyIN}
-            initial="hiddenright"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.9 }}
-            transition={{ delay: 0.8, ease: "easeInOut", duration: 1.2 }}
-            onClick={onContactClick}
-            className="px-4 py-2 mt-8 md:mt-14 bg-[#EB5e33] text-sm md:text-base"
-          >
-            Contact Us
-          </motion.button> */}
+        
           <motion.div
             variants={flyIN}
             initial="hiddenright"
