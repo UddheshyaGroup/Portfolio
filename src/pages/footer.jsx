@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import facebookIcon from "../assets/homepage/icons/facebook-icon.png";
+import instagramIcon from "../assets/homepage/icons/instagram-icon.png";
+import tiktokIcon from "../assets/homepage/icons/tiktok-icon.png";
+import youtubeIcon from "../assets/homepage/icons/youtube-icon.png";
+import linkedinIcon from "../assets/homepage/icons/linkedin-icon.png";
+import pingIcon from "../assets/homepage/icons/ping-icon.png";
+import callIcon from "../assets/homepage/icons/call-icon.png";
+import mailIcon from "../assets/homepage/icons/mail-icon.png";
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -8,27 +17,27 @@ const Footer = () => {
   const socialLinks = [
     {
       href: "https://www.facebook.com/profile.php?id=61578545593783",
-      src: "src/assets/homepage/icons/facebook-icon.png",
+      src: facebookIcon,
       alt: "Facebook",
     },
     {
       href: "https://www.instagram.com/uddheshya.group/",
-      src: "src/assets/homepage/icons/instagram-icon.png",
+      src: instagramIcon,
       alt: "Instagram",
     },
     {
       href: "https://www.tiktok.com/@uddheshya.group",
-      src: "src/assets/homepage/icons/tiktok-icon.png",
+      src: tiktokIcon,
       alt: "TikTok",
     },
     {
       href: "https://www.youtube.com/@UddheshyaGroup",
-      src: "src/assets/homepage/icons/youtube-icon.png",
+      src: youtubeIcon,
       alt: "YouTube",
     },
     {
       href: "https://www.linkedin.com/company/uddheshya-group",
-      src: "src/assets/homepage/icons/linkedin-icon.png",
+      src: linkedinIcon,
       alt: "LinkedIn",
     },
   ];
@@ -101,7 +110,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="overflow-x-hidden">
-          <h3 className="text-sm text-gray-700 font-inter mb-4 text-left">
+          <h3 className="text-lg text-gray-900 font-inter mb-4 text-left">
             We are located at
           </h3>
 
@@ -126,7 +135,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/ping-icon.png"
+                    src={pingIcon}
                     alt="Location"
                     className="w-4 h-4"
                   />
@@ -138,7 +147,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/call-icon.png"
+                    src={callIcon}
                     alt="Phone"
                     className="w-4 h-4"
                   />
@@ -150,7 +159,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/mail-icon.png"
+                    src={mailIcon}
                     alt="mail"
                     className="w-4 h-4"
                   />
@@ -166,7 +175,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/ping-icon.png"
+                    src={pingIcon}
                     alt="Location"
                     className="w-4 h-4"
                   />
@@ -178,7 +187,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/call-icon.png"
+                    src={callIcon}
                     alt="Phone"
                     className="w-4 h-4"
                   />
@@ -190,7 +199,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/mail-icon.png"
+                    src={mailIcon}
                     alt="mail"
                     className="w-4 h-4"
                   />
@@ -206,7 +215,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/ping-icon.png"
+                    src={pingIcon}
                     alt="Location"
                     className="w-4 h-4"
                   />
@@ -218,7 +227,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/call-icon.png"
+                    src={callIcon}
                     alt="Phone"
                     className="w-4 h-4"
                   />
@@ -230,7 +239,7 @@ const Footer = () => {
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
-                    src="src/assets/homepage/icons/mail-icon.png"
+                    src={mailIcon}
                     alt="mail"
                     className="w-4 h-4"
                   />
@@ -243,9 +252,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className="h-[2px] bottom-16 md:bottom-[66px] bg-black left-4 md:left-12 right-4 md:right-12 absolute"></div>
-      <div className="absolute bottom-0 text-center w-full justify-center bg-[#f2ede2] h-[50px] flex items-center px-4">
-        <p className="text-sm md:text-lg w-full">
+      <div className="absolute bottom-0 text-center w-full justify-center bg-[#141446] h-[40px] flex items-center px-4">
+        <p className="text-sm md:text-sm w-full text-white">
           © 2025{" "}
           <Link to="/" onClick={scrollToTop} className="hover:underline">
             Uddheshya Group

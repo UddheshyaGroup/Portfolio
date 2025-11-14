@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
+import featherShape2 from "../../assets/homepage/feathershape2.jpg";
+import featherShape1 from "../../assets/homepage/feathershape1.jpg";
+import bamImage from "../../assets/homepage/BAM.jpg";
+import empoweringTechImage from "../../assets/homepage/empoweringtech.jpg";
+import gateCollegeImage from "../../assets/homepage/gatecollege.png";
+import homeStoriesImage from "../../assets/homepage/homestories.png";
+import midValleyImage from "../../assets/homepage/midvalley.png";
+import loonivaImage from "../../assets/portfolio/Looniva.png";
+import socialMediaIcon from "../../assets/homepage/icons/socialmedia.png";
+import contentIcon from "../../assets/homepage/icons/content.png";
+import influencerIcon from "../../assets/homepage/icons/influencer.png";
 import {
   UtensilsCrossed,
   Lightbulb,
@@ -28,9 +40,15 @@ const flyIN = {
 };
 
 const ListItems = ["We Build", "We Create", "We Host", "We Code"];
-const HomePage = () => {
+const HomePage = ({ onContactClick }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <div className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-28 overflow-x-hidden">
+    <div key={pathname} className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-[8rem] overflow-hidden">
       <div
         className="relative bg-[url('src/assets/homepage/hpmepagebackground.jpg')] bg-no-repeat bg-center p-6 md:p-8 h-auto min-h-[12rem] md:h-[31rem]"
         style={{ backgroundSize: "cover" }}
@@ -82,7 +100,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0">
-        <div className="w-full md:w-[48%] h-auto">
+        <div className="w-full md:w-[65%] h-auto">
           <motion.p
             exit={BookUp}
             initial={{ opacity: 0, y: 20 }}
@@ -107,14 +125,12 @@ const HomePage = () => {
             className="text-base md:text-[1.125rem] text-[#121440] text-center md:text-left"
             style={{ fontFamily: "inter" }}
           >
-            Uddheshya Group is the best digital marketing platform in Nepal,
-            helping businesses in Kathmandu, Banepa, and across the country grow
-            via SEO, social media marketing, branding, web development, and
-            comprehensive digital strategies.
+          Uddheshya Group is a leading digital marketing platform in Nepal, helping businesses grow through innovative online strategies. Based in Kathmandu and Banepa, we serve clients nationwide with expertise in SEO, social media marketing, branding, and web development. Our team focuses on creating tailored digital solutions that boost visibility, engagement, and long-term success. With a strong commitment to creativity and results, Uddheshya Group empowers brands to stand out in the competitive digital world, driving measurable growth and lasting impact across Nepal.
           </motion.p>
 
-          <div className="flex flex-col md:flex-row gap-3 mt-6 md:mt-[2rem] items-center md:items-start md:ml-[4.5rem] justify-center">
+          <div className="flex flex-col md:flex-row gap-3 mt-4 md:mt-[1rem] items-center md:items-start md:ml-[4.5rem] justify-center">
             <MotionLink
+              onClick={onContactClick}
               variants={flyIN}
               initial="hiddenleft"
               whileInView="visible"
@@ -146,61 +162,30 @@ const HomePage = () => {
             </MotionLink>
           </div>
         </div>
-        <motion.div
-          className="hidden md:flex relative w-fit overflow-visible"
-          animate={{ x: [0, 12, -150, 0] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "mirror",
-              duration: 8,
-              ease: "easeInOut",
-            },
-          }}
-        >
+        <div className="hidden md:flex relative w-fit overflow-visible">
           <motion.img
-            src="src/assets/homepage/feathershape2.jpg"
+            src={featherShape2}
             alt="feather2"
             className="w-60 h-60 mt-8 object-cover rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none mr-[-6.045rem]"
-            animate={{ y: [0, -15, 0, 15, 0], rotate: [0, 2, 0, -2, 0] }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{once:false, amount:0.9}}
             transition={{
-              y: {
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 4,
-                ease: "easeInOut",
-              },
-              rotate: {
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 4,
-                ease: "easeInOut",
-              },
+              duration: 0.8,
             }}
           />
           <motion.img
-            src="src/assets/homepage/feathershape1.jpg"
+            src={featherShape1}
             alt="feather1"
             className="w-60 h-60 z-10 object-cover rounded-tl-[80px] rounded-br-[80px] mt-[7.626rem] mr-[1rem]"
-            animate={{ y: [0, 15, 0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{once:false, amount:0.9}}
             transition={{
-              y: {
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 4,
-                ease: "easeInOut",
-                delay: 2,
-              },
-              rotate: {
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 4,
-                ease: "easeInOut",
-                delay: 2,
-              },
+              duration: 0.8,
             }}
           />
-        </motion.div>
+        </div>
       </div>
       <motion.p
         variants={flyIN}
@@ -274,7 +259,7 @@ const HomePage = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView="visible"
           viewport={{ once: false, amount: 0.9 }}
-          className=" inline-flex w-auto overflow-visible text-2xl md:text-3xl mt-[4rem] md:mt-[7.5rem] font-semibold font-inter mb-[2rem] md:mb-[4.5rem] "
+          className=" inline-flex w-auto overflow-visible text-2xl md:text-3xl mt-[3rem] md:mt-[3.5rem] font-semibold font-inter mb-[2rem] md:mb-[4.5rem]"
         >
           FEATURED SUCCESS STORIES
         </motion.p>
@@ -289,7 +274,7 @@ const HomePage = () => {
             duration: 0.5,
             delay: 0.4,
           }}
-          src="src/assets/homepage/BAM.jpg"
+          src={bamImage}
           alt="BAM img"
           className="w-full md:w-[21rem] h-[20rem] md:h-[29rem] rounded-[6.6rem] mx-auto md:ml-[6rem] object-cover"
         />
@@ -303,7 +288,7 @@ const HomePage = () => {
               ease: "easeInOut",
               repeat: 0,
             }}
-            className="text-xl md:text-2xl font-semibold font-inter text-center md:text-left w-full md:w-[26rem] mx-auto md:mx-0"
+            className="text-xl md:text-2xl font-semibold font-inter text-center md:text-center w-full md:w-full mx-auto md:mx-0"
           >
             Bachelor Of Aviation Management
           </motion.p>
@@ -313,14 +298,15 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            className="mt-4 md:mt-[2.5rem] w-full md:w-[26rem] text-center md:text-left mx-auto md:mx-0"
+            className="mt-4 md:mt-[2.5rem] w-full md:w-full text-center md:text-left mx-auto md:mx-0"
           >
             {" "}
             We partnered with Siddhartha Vanasthali Institute, one of Nepal's
             leading educational institutions, to redesign their official
             website. Our team delivered a clean, modern, and mobile-friendly
             interface that highlights their academic excellence, student life,
-            and admission details. The new design improved navigation,
+            and admission details. <br />
+            <br /> The new design improved navigation,
             engagement, and online visibility, helping the institute connect
             more effectively with students and parents.
           </motion.p>
@@ -341,7 +327,7 @@ const HomePage = () => {
       </div>
       <div className="bg-[#3d348b] w-full mx-0 mt-8">
         <div className="px-4 md:ml-[4rem] mt-[4rem] mb-[4rem] grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-5 w-full md:w-[30rem] h-auto">
+          <div className="md:col-span-5 w-full md:w-[30rem] h-auto justifu-center text">
             <motion.p
               exit={Book}
               initial={{ opacity: 0, y: 20 }}
@@ -375,7 +361,7 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
-              className="font-inter text-base md:text-lg text-white w-full md:w-[66%]"
+              className="font-inter text-base md:text-lg text-white w-full md:w-full"
             >
               "UDDHESHYA GROUP transformed our digital presence completely. Our
               restaurant chain went from 2 to 8 locations across Kathmandu
@@ -409,7 +395,7 @@ const HomePage = () => {
                   delay: 0.0,
                 }}
                 className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
-                src="src/assets/homepage/midvalley.png"
+                src={midValleyImage}
                 alt="midvalley"
                 style={{ boxShadow: "6px 6px 12px 1px rgba(60,60,255,0.6)" }}
               />
@@ -423,7 +409,7 @@ const HomePage = () => {
                   delay: 0.1,
                 }}
                 className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
-                src="src/assets/homepage/gatecollege.png"
+                src={gateCollegeImage}
                 alt="gate college"
                 style={{ boxShadow: "6px 6px 8px 1px rgba(60,60,255,0.6)" }}
               />
@@ -437,7 +423,7 @@ const HomePage = () => {
                   delay: 0.2,
                 }}
                 className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
-                src="src/assets/homepage/homestories.png"
+                src={homeStoriesImage}
                 alt="home stories"
                 style={{ boxShadow: "6px 6px 12px 1px rgba(60,60,255,0.6)" }}
               />
@@ -451,7 +437,7 @@ const HomePage = () => {
                   delay: 0.3,
                 }}
                 className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
-                src="src/assets/portfolio/Looniva.png"
+                src={loonivaImage}
                 alt="midvalley"
                 style={{ boxShadow: "6px 6px 12px 1px rgba(60,60,255,0.6)" }}
               />
@@ -469,7 +455,7 @@ const HomePage = () => {
             transition={{
               duration: 0.5,
             }}
-            src="src/assets/homepage/empoweringtech.jpg"
+            src={empoweringTechImage}
             alt="empowering business"
             className="w-full md:w-[29rem] h-[17rem] rounded-lg"
           />
@@ -504,7 +490,7 @@ const HomePage = () => {
                 variants={flyIN}
                 initial="hiddenright"
                 whileInView="visible"
-                whileHover={{scale:1.05}}
+                whileHover={{ scale: 1.05 }}
                 viewport={{ repeat: 1, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="inline-flex bg-[#ff6600] px-3 py-2 mt-3 text-white items-center  mx-auto md:mx-0"
@@ -526,23 +512,8 @@ const HomePage = () => {
         </motion.p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 mb-8 px-4 md:px-0">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.img
-              animate={{ scale: [1, 1.5], x: [0, 100, 0] }}
-              transition={{
-                scale: {
-                  duration: 1,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-                x: {
-                  duration: 3,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
-              src="src/assets/homepage/icons/socialmedia.png"
+            <img
+              src={socialMediaIcon}
               alt=""
               className="w-[4rem] h-[4rem] mx-auto md:mx-0"
             />
@@ -567,23 +538,8 @@ const HomePage = () => {
             </motion.p>
           </div>
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.img
-              animate={{ scale: [1, 1.5], x: [0, 100, 0] }}
-              transition={{
-                scale: {
-                  duration: 1,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-                x: {
-                  duration: 3,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
-              src="src/assets/homepage/icons/content.png"
+            <img
+              src={contentIcon}
               alt=""
               className="w-[4rem] h-[4rem] mx-auto md:mx-0"
             />
@@ -608,23 +564,8 @@ const HomePage = () => {
             </motion.p>
           </div>
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <motion.img
-              animate={{ scale: [1, 1.5], x: [0, 100, 0] }}
-              transition={{
-                scale: {
-                  duration: 1,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-                x: {
-                  duration: 3,
-                  repeat: 1,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
-              src="src/assets/homepage/icons/influencer.png"
+            <img
+              src={influencerIcon}
               alt=""
               className="w-[4rem] h-[4rem] mx-auto md:mx-0"
             />
@@ -659,7 +600,11 @@ const HomePage = () => {
           Let's Collaborate to create innovative marketing Solutions that drive
           real results for your business.
         </p>
-        <MotionLink
+        <motion.button
+          onClick={(e) => {
+            e.preventDefault();
+            onContactClick();
+          }}
           whileInView={{ scale: [1, 1.5] }}
           transition={{
             scale: {
@@ -671,7 +616,7 @@ const HomePage = () => {
           className="flex items-center gap-2 bg-[#ff6600] px-4 py-3 mt-6 rounded-md"
         >
           GET STARTED <MoveRight />
-        </MotionLink>
+        </motion.button>
       </div>
     </div>
   );
