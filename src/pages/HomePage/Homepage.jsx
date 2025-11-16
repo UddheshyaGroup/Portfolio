@@ -439,7 +439,7 @@ const HomePage = ({ onContactClick }) => {
                   duration: 0.5,
                   delay: 0.2,
                 }}
-                className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
+                className="w-full h-[10rem] md:w-[25rem] md:h-[19rem] rounded-lg object-cover"
                 src={homeStoriesImage}
                 alt="home stories"
                 style={{ boxShadow: "6px 6px 12px 1px rgba(60,60,255,0.6)" }}
@@ -453,7 +453,7 @@ const HomePage = ({ onContactClick }) => {
                   duration: 0.5,
                   delay: 0.3,
                 }}
-                className="w-full h-[10rem] md:w-[19rem] md:h-[13rem] rounded-lg object-cover"
+                className="w-full h-[10rem] md:w-[25rem] md:h-[19rem] rounded-lg object-cover"
                 src={loonivaImage}
                 alt="midvalley"
                 style={{ boxShadow: "6px 6px 12px 1px rgba(60,60,255,0.6)" }}
