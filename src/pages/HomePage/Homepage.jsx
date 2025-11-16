@@ -357,7 +357,7 @@ const HomePage = ({ onContactClick }) => {
               }}
               className="font-semibold text-[#ff6600] text-xl md:text-2xl mt-12 font-inter mb-6"
             >
-              STORIES mb-6
+              STORIES 
             </motion.p>
             <motion.p
               exit={BookUp}
