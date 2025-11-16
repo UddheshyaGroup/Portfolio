@@ -130,7 +130,7 @@ const HomePage = ({ onContactClick }) => {
             className="text-base md:text-[1.125rem] text-[#121440] text-center md:text-left"
             style={{ fontFamily: "inter" }}
           >
-            Uddheshya Group is a leading digital marketing platform in Nepal,
+            Uddheshya Group is a leading business development platform in Nepal,
             helping businesses grow through innovative online strategies. Based
             in Kathmandu and Banepa, we serve clients nationwide with expertise
             in SEO, social media marketing, branding, and web development. Our
@@ -495,7 +495,7 @@ const HomePage = ({ onContactClick }) => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-inter text-center md:text-left"
             >
-              UDDHESHYA GROUP is a forward-thinking marketing agency that
+              UDDHESHYA GROUP is a forward-thinking business development agency that
               combines creativity, data-driven strategies, and cutting-edge
               technology to deliver exceptional results for our clients. Founded
               in 2025, we've grown from a small team of passionate marketers to
