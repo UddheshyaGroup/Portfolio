@@ -53,8 +53,10 @@ const HomePage = ({ onContactClick }) => {
       className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-[8rem] overflow-hidden"
     >
       <div
-        className="relative bg-[url('src/assets/homepage/hpmepagebackground.jpg')] bg-no-repeat bg-center p-6 md:p-8 h-auto min-h-[12rem] md:h-[31rem]"
-        style={{ backgroundSize: "cover" }}
+        className="relative bg-no-repeat bg-center p-6 md:p-8 h-auto min-h-[12rem] md:h-[31rem]"
+        style={{ backgroundSize: "cover",
+          backgroundImage: `url(/hpmepagebackground.jpg)`
+         }}
       >
         <div className="flex flex-col justify-center items-center h-full py-6 md:py-0">
           <p className="text-xl md:text-5xl font-bold relative z-10 text-white text-center px-2 leading-tight">
