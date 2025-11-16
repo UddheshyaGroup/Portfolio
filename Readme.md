@@ -159,6 +159,22 @@ npm run build
 
 The build output will be in the `dist` folder, ready for deployment to your hosting platform.
 
+### Vercel (GitHub Action)
+
+This repository includes a GitHub Actions workflow that deploys previews and production builds to Vercel using a token-based action. This avoids the Git-Author restrictions when using Vercel's GitHub integration.
+
+1. Go to **Settings → Secrets → Actions** in this repository.
+2. Add these repository secrets (values found in your Vercel Dashboard under project settings):
+  - `VERCEL_TOKEN` — Personal token from Vercel (create in Vercel > Account > Tokens).
+  - `VERCEL_ORG_ID` — Organization ID for your Vercel team.
+4. Optionally add `VERCEL_ENV` or other environment variables to GitHub Secrets or GitHub Environments.
+
+Notes: the workflow uses concurrency to cancel previous deploys on the same branch; it will run preview deploys for PRs and production deploys only when pushing to `main` (see `.github/workflows/vercel-deploy.yml`).
+  - `VERCEL_PROJECT_ID` — Project ID from the Vercel project settings.
+3. If you want Vercel to keep deploying from the GitHub Integration too, leave it; otherwise disable "Deploy Hooks" in the Vercel Git Integration to avoid duplicate deployments.
+
+After adding secrets, GitHub Actions will deploy previews for pull requests and production when pushing to `main`.
+
 ## 📧 Contact
 
 **Uddheshya Group**
