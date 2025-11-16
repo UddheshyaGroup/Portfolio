@@ -402,7 +402,7 @@ const HomePage = ({ onContactClick }) => {
           </div>
           <div className="md:col-span-7 p-0 md:p-12">
             <div className="grid grid-cols-2 gap-4 md:gap-x-12 md:gap-y-12 overflow-visible">
-              <motion.img
+              {/* <motion.img
                 variants={flyIN}
                 initial="hiddenright"
                 whileInView="visible"
@@ -429,7 +429,7 @@ const HomePage = ({ onContactClick }) => {
                 src={gateCollegeImage}
                 alt="gate college"
                 style={{ boxShadow: "6px 6px 8px 1px rgba(60,60,255,0.6)" }}
-              />
+              /> */}
               <motion.img
                 variants={flyIN}
                 initial="hiddenright"

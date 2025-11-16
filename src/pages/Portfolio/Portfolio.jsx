@@ -205,9 +205,8 @@ const Portfolio = ({ onContactClick }) => {
         />
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6 md:gap-x-[4rem] px-4 md:ml-[4rem] md:mr-[4rem] mt-8">
-        {/* The First Column */}
-        <div className="py-4 md:py-8 my-4 w-full md:w-1/2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:ml-[4rem] md:mr-[4rem] mt-8 mb-8">
+        <div className="flex flex-col">
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -217,7 +216,8 @@ const Portfolio = ({ onContactClick }) => {
             }}
             src={homeStoriesImage}
             alt="homestories"
-            className="w-full h-[20rem] md:h-[23rem] object-cover rounded-lg"
+            // className="w-full h-[20rem] md:h-[23rem] object-cover rounded-lg"
+            className="h-[16rem] w-full object-cover object-center rounded-lg"
           />
           <motion.p
             initial={{ opacity: 0, y: 100 }}
@@ -265,8 +265,7 @@ const Portfolio = ({ onContactClick }) => {
           </a>
         </div>
 
-        {/* The Second Column */}
-        <div className="py-4 md:py-8 my-4 w-full md:w-1/2">
+        {/* <div className="flex flex-col">
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -324,10 +323,67 @@ const Portfolio = ({ onContactClick }) => {
               <MoveRight className="mt-1" />
             </button>
           </a>
-        </div>
-      </div>
+        </div> */}
+        {/* <div className="flex flex-col">
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeInOut",
+            }}
+            src={midValleyImage}
+            alt="midvalley"
+            className="w-full h-[20rem] md:h-[23rem] object-cover rounded-lg"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            className="mt-3"
+          >
+            Empowering Future Professionals
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            className="font-bold text-xl md:text-2xl text-inter mt-3 mb-3"
+          >
+            Mid Valley International College
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+          >
+            We developed a clean, professional website for Mid Valley
+            International College, highlighting their academic programs, global
+            partnerships, and student success stories. The design focuses on
+            clarity, modern visuals, and easy navigation to enhance the
+            college's digital presence.
+          </motion.p>
+          <a
+            href="https://midvalley.edu.np/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex text-[#ff6600] font-bold font-inter text-lg md:text-xl py-2 mt-3 gap-3">
+              See More
+              <MoveRight className="mt-1" />
+            </button>
+          </a>
+        </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-0 mb-8">
         <div className="flex flex-col">
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
@@ -386,7 +442,7 @@ const Portfolio = ({ onContactClick }) => {
             </button>
           </a>
         </div>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -443,7 +499,7 @@ const Portfolio = ({ onContactClick }) => {
               <MoveRight className="mt-1" />
             </button>
           </a>
-        </div>
+        </div> */}
         <div className="flex flex-col">
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
