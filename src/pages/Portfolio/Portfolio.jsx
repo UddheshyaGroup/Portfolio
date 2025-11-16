@@ -26,11 +26,14 @@ const Portfolio = ({ onContactClick }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setAnimationKey(prev => prev + 1);
+    setAnimationKey((prev) => prev + 1);
   }, [pathname]);
 
   return (
-    <div key={`${pathname}-${animationKey}`} className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-28">
+    <div
+      key={`${pathname}-${animationKey}`}
+      className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-28"
+    >
       <div
         className="relative bg-no-repeat bg-center p-4 md:p-8 h-[20rem] md:h-[28rem]"
         style={{
@@ -126,7 +129,7 @@ const Portfolio = ({ onContactClick }) => {
 
       <div className="flex flex-col md:flex-row items-center gap-1 px-4 sm:px-6 lg:px-0">
         {/* Text Content */}
-        <div className="flex flex-col mt-4 md:mt-1 md:ml-5 max-w-full md:max-w-[24rem] text-center md:text-left overflow-visible">
+        <div className="flex flex-col mt-4 md:mt-1 md:mx-[6rem] max-w-full text-center md:text-left overflow-visible">
           <motion.p
             initial={{ opacit: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +138,7 @@ const Portfolio = ({ onContactClick }) => {
               duration: 0.4,
               ease: "easeInOut",
             }}
-            className="text-base sm:text-lg"
+            className="text-base sm:text-2xl"
           >
             Leading Aviation Education
           </motion.p>
@@ -150,8 +153,8 @@ const Portfolio = ({ onContactClick }) => {
             }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold font-inter mt-4 leading-tight"
           >
-            Bachelor <br />
-            Of Aviation Management
+            Bachelor Of
+            <br /> Aviation Management
           </motion.p>
           <motion.p
             initial={{ opacit: 0, y: 100 }}
@@ -162,7 +165,7 @@ const Portfolio = ({ onContactClick }) => {
               delay: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-4 text-sm sm:text-base md:text-base leading-relaxed"
+            className="mt-4 text-lg sm:text-base md:text-base leading-relaxed"
           >
             A comprehensive four-year program preparing students for leadership
             roles in the aviation industry with cutting-edge curriculum and
@@ -197,8 +200,8 @@ const Portfolio = ({ onContactClick }) => {
             ease: "easeInOut",
           }}
           src={sbiImage}
-          alt="SBI"
-          className="w-full md:w-auto h-64 sm:h-80 md:h-[34rem] object-contain md:ml-[4rem] rounded-3xl mb-3"
+          alt="SVI"
+          className="w-full md:w-auto h-64 sm:h-80 md:h-[34rem] object-contain md:ml-[4rem] md:mr-[6rem] rounded-3xl mb-3"
         />
       </div>
 

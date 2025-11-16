@@ -48,7 +48,10 @@ const HomePage = ({ onContactClick }) => {
   }, [pathname]);
 
   return (
-    <div key={pathname} className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-[8rem] overflow-hidden">
+    <div
+      key={pathname}
+      className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-[8rem] overflow-hidden"
+    >
       <div
         className="relative bg-[url('src/assets/homepage/hpmepagebackground.jpg')] bg-no-repeat bg-center p-6 md:p-8 h-auto min-h-[12rem] md:h-[31rem]"
         style={{ backgroundSize: "cover" }}
@@ -125,7 +128,15 @@ const HomePage = ({ onContactClick }) => {
             className="text-base md:text-[1.125rem] text-[#121440] text-center md:text-left"
             style={{ fontFamily: "inter" }}
           >
-          Uddheshya Group is a leading digital marketing platform in Nepal, helping businesses grow through innovative online strategies. Based in Kathmandu and Banepa, we serve clients nationwide with expertise in SEO, social media marketing, branding, and web development. Our team focuses on creating tailored digital solutions that boost visibility, engagement, and long-term success. With a strong commitment to creativity and results, Uddheshya Group empowers brands to stand out in the competitive digital world, driving measurable growth and lasting impact across Nepal.
+            Uddheshya Group is a leading digital marketing platform in Nepal,
+            helping businesses grow through innovative online strategies. Based
+            in Kathmandu and Banepa, we serve clients nationwide with expertise
+            in SEO, social media marketing, branding, and web development. Our
+            team focuses on creating tailored digital solutions that boost
+            visibility, engagement, and long-term success. With a strong
+            commitment to creativity and results, Uddheshya Group empowers
+            brands to stand out in the competitive digital world, driving
+            measurable growth and lasting impact across Nepal.
           </motion.p>
 
           <div className="flex flex-col md:flex-row gap-3 mt-4 md:mt-[1rem] items-center md:items-start md:ml-[4.5rem] justify-center">
@@ -169,7 +180,7 @@ const HomePage = ({ onContactClick }) => {
             className="w-60 h-60 mt-8 object-cover rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none mr-[-6.045rem]"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{once:false, amount:0.9}}
+            viewport={{ once: false, amount: 0.9 }}
             transition={{
               duration: 0.8,
             }}
@@ -180,7 +191,7 @@ const HomePage = ({ onContactClick }) => {
             className="w-60 h-60 z-10 object-cover rounded-tl-[80px] rounded-br-[80px] mt-[7.626rem] mr-[1rem]"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{once:false, amount:0.9}}
+            viewport={{ once: false, amount: 0.9 }}
             transition={{
               duration: 0.8,
             }}
@@ -264,21 +275,25 @@ const HomePage = ({ onContactClick }) => {
           FEATURED SUCCESS STORIES
         </motion.p>
       </div>
-      <div className="text-center grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 md:mr-12 px-4 md:px-0">
+      <div className="text-center grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 md:mr-12 px-4 md:px-0">
         <motion.img
           variants={flyIN}
           initial={{ opacity: 0, x: -100 }}
-          whileInView="visible"
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{
             duration: 0.5,
             delay: 0.4,
+            type: "spring",
+            repeat: 0,
+            stiffness: 120,
+            damping: 20,
           }}
           src={bamImage}
           alt="BAM img"
-          className="w-full md:w-[21rem] h-[20rem] md:h-[29rem] rounded-[6.6rem] mx-auto md:ml-[6rem] object-cover"
+          className="w-full md:w-[21rem] h-[20rem] md:h-[29rem] rounded-[6.6rem] md:ml-[6rem] object-cover"
         />
-        <div className="px-4 md:px-0">
+        <div className="md:px-0 w-full md:-ml-[4rem] mt-8">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -298,7 +313,7 @@ const HomePage = ({ onContactClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            className="mt-4 md:mt-[2.5rem] w-full md:w-full text-center md:text-left mx-auto md:mx-0"
+            className="mt-4 text-lg md:mt-[2.5rem] w-full md:w-full text-center md:text-left mx-auto md:mx-0"
           >
             {" "}
             We partnered with Siddhartha Vanasthali Institute, one of Nepal's
@@ -306,9 +321,9 @@ const HomePage = ({ onContactClick }) => {
             website. Our team delivered a clean, modern, and mobile-friendly
             interface that highlights their academic excellence, student life,
             and admission details. <br />
-            <br /> The new design improved navigation,
-            engagement, and online visibility, helping the institute connect
-            more effectively with students and parents.
+            <br /> The new design improved navigation, engagement, and online
+            visibility, helping the institute connect more effectively with
+            students and parents.
           </motion.p>
 
           <MotionLink
@@ -327,7 +342,7 @@ const HomePage = ({ onContactClick }) => {
       </div>
       <div className="bg-[#3d348b] w-full mx-0 mt-8">
         <div className="px-4 md:ml-[4rem] mt-[4rem] mb-[4rem] grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-5 w-full md:w-[30rem] h-auto justifu-center text">
+          <div className="md:col-span-5 w-full md:w-[30rem] h-auto justify-center text">
             <motion.p
               exit={Book}
               initial={{ opacity: 0, y: 20 }}
@@ -338,9 +353,9 @@ const HomePage = ({ onContactClick }) => {
                 ease: "easeInOut",
                 repeat: 0,
               }}
-              className="font-semibold text-[#ff6600] text-xl md:text-2xl mt-6 font-inter"
+              className="font-semibold text-[#ff6600] text-xl md:text-2xl mt-12 font-inter mb-6"
             >
-              STORIES
+              STORIES mb-6
             </motion.p>
             <motion.p
               exit={BookUp}
@@ -351,7 +366,7 @@ const HomePage = ({ onContactClick }) => {
                 duration: 0.5,
                 ease: "easeInOut",
               }}
-              className="font-bold text-2xl md:text-3xl text-white py-2 font-inter"
+              className="font-bold text-2xl md:text-3xl text-white py-2 font-inter mb-6"
             >
               UDDHESHYA GROUP
             </motion.p>
@@ -361,7 +376,7 @@ const HomePage = ({ onContactClick }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
-              className="font-inter text-base md:text-lg text-white w-full md:w-full"
+              className="font-inter text-base md:text-lg text-white w-full md:w-full mb-6"
             >
               "UDDHESHYA GROUP transformed our digital presence completely. Our
               restaurant chain went from 2 to 8 locations across Kathmandu
@@ -457,16 +472,16 @@ const HomePage = ({ onContactClick }) => {
             }}
             src={empoweringTechImage}
             alt="empowering business"
-            className="w-full md:w-[29rem] h-[17rem] rounded-lg"
+            className="w-full md:w-[41rem] h-[17rem] rounded-lg"
           />
-          <div className="items-center md:pr-[9rem]">
+          <div className="items-center md:pr-[4rem]">
             <motion.p
               variants={flyIN}
               initial="hiddenright"
               whileInView="visible"
               viewport={{ repeat: false, amount: 0.1 }}
               transition={{ duration: 0.3 }}
-              className="font-bold text-lg md:text-xl text-center md:text-left text-inter"
+              className="font-bold text-lg md:text-3xl text-center md:text-left text-inter"
             >
               Empowering Businesses With Tech
             </motion.p>
@@ -476,7 +491,7 @@ const HomePage = ({ onContactClick }) => {
               whileInView="visible"
               viewport={{ repeat: false, amount: 0.1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm text-inter text-center md:text-left"
+              className="text-lg text-inter text-center md:text-left"
             >
               UDDHESHYA GROUP is a forward-thinking marketing agency that
               combines creativity, data-driven strategies, and cutting-edge
@@ -531,7 +546,6 @@ const HomePage = ({ onContactClick }) => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, repeat: 0, ease: "easeInOut" }}
-              className="mt-4 md:mt-9"
             >
               Manage your social media platforms, create engaging posts,
               Increase your brands presence online.
@@ -557,7 +571,6 @@ const HomePage = ({ onContactClick }) => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, repeat: 0, ease: "easeInOut" }}
-              className="mt-4 md:mt-9"
             >
               Create engaging content for social media including reels, design
               work, and full-scale campaigns to connect with your audiences.
@@ -583,7 +596,6 @@ const HomePage = ({ onContactClick }) => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, repeat: 0, ease: "easeInOut" }}
-              className="mt-4 md:mt-9"
             >
               Partner with influencers and engage with communities to promote
               your brand and create authentic connections.

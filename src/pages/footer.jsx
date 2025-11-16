@@ -109,18 +109,18 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden md:ml-[5rem]">
           <h3 className="text-lg text-gray-900 font-inter mb-4 text-left">
-            We are located at
+            We are located at;
           </h3>
 
           {/* Main Location Headers */}
           <div
             
-            className="grid grid-cols-3 gap-2 md:gap-4 mb-3"
+            className="grid grid-cols-3 gap-2 md:gap-4 mb-3 "
           >
-            <h4 className="font-bold text-sm md:text-base">UK</h4>
-            <h4 className="font-bold text-sm md:text-base col-span-2 text-center md:text-center">
+            <h4 className="font-bold text-sm md:text-base">United Kingdom</h4>
+            <h4 className="font-bold text-sm md:text-base col-span-2 text-start md:text-start md:ml-[12rem]">
               Nepal
             </h4>
           </div>
@@ -128,12 +128,12 @@ const Footer = () => {
           {/* Location Details Grid */}
           <div
             
-            className="grid grid-cols-3 gap-2 md:gap-4 text-[10px] md:text-xs"
+            className="grid grid-cols-3 gap-2 md:gap-2 text-[10px] md:text-xs"
           >
             {/* UK Location */}
-            <div className="flex flex-col gap-1 md:gap-2">
-              <div className="flex items-center gap-1">
-                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+            <div className="flex flex-col gap-1 md:gap-2 ">
+              <div className="flex items-center gap-1 ">
+                <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center ">
                   <img
                     src={pingIcon}
                     alt="Location"
@@ -141,7 +141,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  London, United Kingdom
+                  NORTHAMPTON ENGLAND NN3 2HZ
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -153,7 +153,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  +44 XXX XXX XXXX
+                  +977 9805 533 600
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -165,13 +165,13 @@ const Footer = () => {
                   />
                 </div>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  uk@uddheshya.com
+                  uddheshyastudioukltd@gmail.com
                 </p>
               </div>
             </div>
 
             {/* Nepal Location 1 - Sanepa */}
-            <div className="flex flex-col gap-2 md:ml-[4rem]">
+            <div className="flex flex-col gap-2 ">
               <div className="flex items-center gap-1">
                 <div className="w-6 h-6 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <img
@@ -204,8 +204,8 @@ const Footer = () => {
                     className="w-4 h-4"
                   />
                 </div>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  uddheshyastudio@gmail.com
+                <p className="overflow-x-hidden text-ellipsis whitespace-nowrap">
+                  info@uddheshyastudio.com
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  +977 9XXX XXX XXX
+                  +977 9805 533 603
                 </p>
               </div>
               <div className="flex items-center gap-1">
@@ -245,7 +245,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-                  banepa@uddheshya.com
+                  uddheshyastudio@gmail.com
                 </p>
               </div>
             </div>

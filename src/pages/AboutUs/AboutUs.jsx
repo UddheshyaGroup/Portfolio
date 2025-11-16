@@ -19,7 +19,7 @@ const AboutUs = ({ onContactClick }) => {
       className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-28"
     >
       <div
-        className="relative bg-no-repeat bg-center p-4 md:p-8 h-[8rem] md:h-[12rem]"
+        className="relative bg-no-repeat bg-center p-4 md:p-8  md:py-[4rem] md:h-[30rem]"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "100% auto",
@@ -27,21 +27,22 @@ const AboutUs = ({ onContactClick }) => {
       >
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="flex flex-col justify-center items-center h-full w-auto text-white relative z-10">
-          <p className="text-2xl md:text-5xl font-bold relative z-10 text-center px-2">
+          <p className="text-2xl md:text-5xl font-bold relative z-10 text-center px-2 md:mt-[4rem]">
             UDDHESHYA GROUP
           </p>
+          <div className="flex flex-col justify-center items-center pb-8 md:pb-12 px-4">
+            <p className="font-bold text-2xl md:text-3xl relative mt-6 md:mt-8 mb-4 text-center w-full md:w-[80%]">
+              Where Creativity Meets Impact
+            </p>
+            <p className="font-inter text-sm md:text-[1rem] relative text-center w-full md:w-[100%]">
+              {" "}
+              WE DESIGN, DEVELOP, AND DELIVER <br /> Impactful Digital Solutions That
+              Blend Creativity With Technology.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center bg-[#f2f2f2] pb-8 md:pb-12 px-4">
-        <p className="font-bold text-2xl md:text-5xl relative mt-6 md:mt-8 mb-4 text-center w-full md:w-[50%]">
-          Where Creativity Meets Impact
-        </p>
-        <p className="font-inter text-sm md:text-[1rem] relative text-center w-full md:w-[25%]">
-          {" "}
-          WE DESIGN, DEVELOP, AND DELIVER Impactful Digital Solutions That Blend
-          Creativity With Technology.
-        </p>
-      </div>
+
       <div className="flex flex-col items-center px-4 text-wrap overflow-hidden break-words">
         <p className="text-center font-bold text-2xl md:text-[3rem] mt-4 mb-4 leading-tight">
           Who are We?
@@ -66,10 +67,7 @@ const AboutUs = ({ onContactClick }) => {
       {/* Team Section */}
       <p className="text-3xl text-center font-bold mb-6">OUR TEAM</p>
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-12"
-        style={{ gridAutoRows: "1fr" }}
-      >
+      <div className="grid grid-cols-1 max-[1234px]:grid-cols-1 min-[1235px]:grid-cols-2 md:gap-6 px-4 mb-12">
         {testimonials.map((person, index) => (
           <div key={index} className="h-full">
             <ProfileCard
@@ -107,6 +105,17 @@ const AboutUs = ({ onContactClick }) => {
         >
           Contact Us
         </motion.button>
+
+        <div className="w-full mt-6">
+          <iframe
+            width="100%"
+            height="400"
+            loading="lazy"
+            src="https://www.google.com/maps?q=27.6885298,85.3084899&z=16&output=embed"
+            style={{ border: "none" }}
+            title="Embedded Google Map"
+          ></iframe>
+        </div>
       </div>
     </div>
   );

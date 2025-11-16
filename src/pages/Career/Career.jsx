@@ -90,10 +90,6 @@ const careerpage = ({ onContactClick }) => {
           </motion.div>
         </div>
       </div>
-
-      <p className="font-bold text-2xl md:text-3xl font-Poppins px-4 md:px-9 mt-7 mb-6">
-        Creative Department
-      </p>
       <div className="w-full h-[2px] bg-black"></div>
 
       <div className="flex flex-col px-4 md:px-9 gap-6 mt-8 w-full">

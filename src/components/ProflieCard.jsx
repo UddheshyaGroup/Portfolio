@@ -8,18 +8,18 @@ const ProfileCard = ({ imageSrc, name, title, testimonial }) => {
     <motion.div
       whileHover={{ scale: 1.03, boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}
       transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      className="h-full flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden"
+      className="md:h-full flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-lg overflow-hidden"
     >
       {/* === IMAGE (Right on Desktop, Top on Mobile) === */}
-      <div className="w-full md:w-40 lg:w-48 flex-shrink-0 flex items-center justify-center p-4 bg-gray-50 md:h-full">
+      <div className="w-full md:w-40 lg:w-48 flex-shrink-0 flex items-center justify-center p-4 bg-gray-50 h-auto md:h-full">
         {imageSrc ? (
           <img
             src={imageSrc}
             alt={name}
-            className="max-h-full w-auto object-contain rounded-lg shadow-sm"
+            className="h-auto md:h-full w-auto object-contain rounded-lg shadow-sm"
           />
         ) : (
-          <div className="flex h-44 w-32 md:h-52 md:w-36 lg:h-60 lg:w-44 items-center justify-center rounded-lg bg-gray-200 text-2xl font-bold text-gray-600">
+          <div className="flex h-auto md:h-full lg:h-60 w-32 md:w-36 lg:w-44 items-center justify-center rounded-lg bg-gray-200 text-2xl font-bold text-gray-600">
             {name
               .split(" ")
               .map((n) => n[0])
@@ -42,12 +42,12 @@ const ProfileCard = ({ imageSrc, name, title, testimonial }) => {
 
         {/* Testimonial – Full width, grows to fill */}
         <div className="flex flex-col gap-2 text-center md:text-left">
-          <p className="text-sm text-gray-700 leading-relaxed flex-1">
+          <p className="text-lg text-gray-700 leading-relaxed flex-1">
             <Quote
-              size={14}
+              size={18}
               color="#000000"
-              strokeWidth={3}
-              className="inline-block rotate-180 mr-1 -translate-y-1"
+              strokeWidth={2}
+              className="inline-block rotate-180 mr-1 -translate-y-2"
             />
 
             {testimonial}
@@ -55,8 +55,8 @@ const ProfileCard = ({ imageSrc, name, title, testimonial }) => {
             <Quote
               size={14}
               color="#000000"
-              strokeWidth={3}
-              className="inline-block ml-1 translate-y-1"
+              strokeWidth={2}
+              className="inline-block ml-1 translate-y-2"
             />
           </p>
         </div>
