@@ -520,8 +520,8 @@ const HomePage = ({ onContactClick }) => {
         >
           Our Services
         </motion.p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 mb-8 px-4 md:px-0">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-[4.56rem] mt-8 mb-8 md:mr-[4rem]">
+          <div className="flex flex-col items-start text-left">
             <img
               src={socialMediaIcon}
               alt=""
@@ -546,11 +546,11 @@ const HomePage = ({ onContactClick }) => {
               Increase your brands presence online.
             </motion.p>
           </div>
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-start text-left md:pr-[4rem]">
             <img
               src={contentIcon}
               alt=""
-              className="w-[4rem] h-[4rem] mx-auto md:mx-0"
+              className="w-[4rem] h-[4rem]"
             />
             <motion.p
               variants={flyIN}
@@ -571,11 +571,11 @@ const HomePage = ({ onContactClick }) => {
               work, and full-scale campaigns to connect with your audiences.
             </motion.p>
           </div>
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-start text-left">
             <img
               src={influencerIcon}
               alt=""
-              className="w-[4rem] h-[4rem] mx-auto md:mx-0"
+              className="w-[4rem] h-[4rem]"
             />
             <motion.p
               variants={flyIN}
@@ -599,31 +599,33 @@ const HomePage = ({ onContactClick }) => {
         </div>
       </div>
       {/*Marketing strategy division  */}
-      <div className="text-white bg-[#3d348b] flex flex-col items-center justify-center text-inter w-full h-[21rem] md:h-[17rem] rounded-[22px] py-8 px-4">
-        <p className="text-2xl md:text-3xl font-bold text-center">
-          Ready TO Transform Your Marketing Strategy?
-        </p>
-        <p className="mt-2 text-center">
-          Let's Collaborate to create innovative marketing Solutions that drive
-          real results for your business.
-        </p>
-        <motion.button
-          onClick={(e) => {
-            e.preventDefault();
-            onContactClick();
-          }}
-          whileInView={{ scale: [1, 1.5] }}
-          transition={{
-            scale: {
-              duration: 0.6,
-              repeat: Infinity,
-              repeatType: "mirror",
-            },
-          }}
-          className="flex items-center gap-2 bg-[#ff6600] px-4 py-3 mt-6 rounded-md"
-        >
-          GET STARTED <MoveRight />
-        </motion.button>
+      <div className="mt-8 mb-8 mx-4 md:mx-8">
+        <div className="text-white bg-[#3d348b] flex flex-col items-center justify-center text-inter w-full h-[21rem] md:h-[17rem] rounded-[22px] py-8 px-4">
+          <p className="text-2xl md:text-3xl font-bold text-center">
+            Ready TO Transform Your Marketing Strategy?
+          </p>
+          <p className="mt-2 text-center">
+            Let's Collaborate to create innovative marketing Solutions that drive
+            real results for your business.
+          </p>
+          <motion.button
+            onClick={(e) => {
+              e.preventDefault();
+              onContactClick();
+            }}
+            whileInView={{ scale: [1, 1.5] }}
+            transition={{
+              scale: {
+                duration: 0.6,
+                repeat: Infinity,
+                repeatType: "mirror",
+              },
+            }}
+            className="flex items-center gap-2 bg-[#ff6600] px-4 py-3 mt-6 rounded-md"
+          >
+            GET STARTED <MoveRight />
+          </motion.button>
+        </div>
       </div>
     </div>
   );
