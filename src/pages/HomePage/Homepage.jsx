@@ -202,7 +202,7 @@ const HomePage = ({ onContactClick }) => {
       >
         Trusted By Businesses Across Nepal
       </motion.p>
-      <div className="justify-around font-poppins font-semibold grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-7 text-white text-center">
+      <div className="font-poppins font-semibold grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-7 text-white text-center md:ml-[4.56rem] md:mr-[4rem]">
         <motion.div
           whileHover={{ scale: 1.2 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
