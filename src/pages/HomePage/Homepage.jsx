@@ -50,16 +50,17 @@ const HomePage = ({ onContactClick }) => {
   return (
     <div
       key={pathname}
-      className="w-full h-full bg-[#faf7ee] flex flex-col px-2 md:px-4 pt-[8rem] overflow-hidden"
+      className="w-full h-full bg-[#faf7ee] flex flex-col overflow-hidden"
     >
       <div
-        className="relative bg-no-repeat bg-center p-6 md:p-8 h-auto min-h-[12rem] md:h-[31rem]"
+        className="relative bg-no-repeat bg-center p-6 md:p-8 h-screen w-full flex items-center justify-center"
         style={{ backgroundSize: "cover",
-          backgroundImage: `url(/hpmepagebackground.jpg)`
+          backgroundImage: `url(/hpmepagebackground.jpg)`,
+          backgroundPosition: "center center"
          }}
       >
-        <div className="flex flex-col justify-center items-center h-full py-6 md:py-0">
-          <p className="text-xl md:text-5xl font-bold relative z-10 text-white text-center px-2 leading-tight">
+        <div className="flex flex-col justify-center items-center z-10">
+          <p className="text-2xl md:text-6xl font-bold text-white text-center px-4 leading-tight">
             <Typewriter
               words={["Building Purpose. Creating Change"]}
               loop={Infinity}
@@ -72,7 +73,7 @@ const HomePage = ({ onContactClick }) => {
             .
           </p>
           <motion.p
-            className="text-xs md:text-[1.125rem] relative z-10 text-white mt-2 md:mt-4 text-center px-2"
+            className="text-sm md:text-xl text-white mt-3 md:mt-6 text-center px-4 max-w-3xl"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -82,13 +83,13 @@ const HomePage = ({ onContactClick }) => {
           </motion.p>
 
           <ul
-            className="text-sm md:text-2xl relative z-10 mt-2 md:mt-4 text-white/60 text-center list-none"
+            className="text-base md:text-3xl mt-4 md:mt-8 text-white/70 text-center list-none flex flex-col items-center"
             style={{ fontFamily: "tienne" }}
           >
             {ListItems.map((item, index) => (
               <motion.li
                 key={index}
-                className="text-lg font-semibold"
+                className="text-xl md:text-2xl font-semibold text-center"
                 initial={{ x: index % 2 === 0 ? 100 : -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
@@ -104,7 +105,7 @@ const HomePage = ({ onContactClick }) => {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0 px-2 md:px-4 mt-8">
         <div className="w-full md:w-[65%] h-auto">
           <motion.p
             exit={BookUp}
